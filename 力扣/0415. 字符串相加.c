@@ -1,7 +1,13 @@
-#include <stdio.h>
+/*
+ * @lc app=leetcode.cn id=415 lang=c
+ *
+ * [415] å­—ç¬¦ä¸²ç›¸åŠ 
+ */
+
 #include <string.h>
 #include <math.h>
 
+// @lc code=start
 void reverse(char* s) {
     int len = strlen(s);
     for (int i = 0; i < len / 2; i++) {
@@ -11,26 +17,21 @@ void reverse(char* s) {
     }
 }
 
-int main() {
-    char ch_1[1001], ch_2[1001];
-    scanf("%s", ch_1);
-    scanf("%s", ch_2);
+char* addStrings(char* num1, char* num2) {
+    reverse(num1);
+    reverse(num2);
 
-    reverse(ch_1);
-    reverse(ch_2);
+    int len_1 = strlen(num1);
+    int len_2 = strlen(num2);
 
-    int len_1 = strlen(ch_1);
-    int len_2 = strlen(ch_2);
-
-    int a[1000] = {0}, b[1000] = {0}, c[1000] = {0};
+    int a[10000] = {0}, b[10000] = {0}, c[10000] = {0};
     for (int i = 0; i < len_1; i++) {
-        a[i] = ch_1[i] - '0';
-    }     
+        a[i] = num1[i] - '0';
+    }
     for (int i = 0; i < len_2; i++) {
-        b[i] = ch_2[i] - '0';
+        b[i] = num2[i] - '0';
     }
 
-    // Ïà¼Ó
     int len = fmax(len_1, len_2);
     for (int i = 0; i < len; i++) {
         c[i] = a[i] + b[i];
@@ -42,14 +43,17 @@ int main() {
         }
     }
 
-    // ½øÎ»
     if (c[len] != 0) {
         len++;
     }
-    for (int i = len - 1; i >= 0; i--) {
-        printf("%d", c[i]);
-    }
-    printf("\n");
 
-    return 0;
+    char* res = malloc((len + 1) * sizeof(char));
+    for (int i = len - 1; i >= 0; i--) {
+        res[len - 1 - i] = c[i] + '0';
+    }
+    res[len] = '\0';
+
+    return res;
 }
+// @lc code=end
+

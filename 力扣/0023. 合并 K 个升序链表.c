@@ -23,7 +23,6 @@ struct ListNode* mergeKLists(struct ListNode** lists, int listsSize) {
     typedef struct ListNode ListNode;
 
     int arr[10000];
-
     int num = 0;
 
     for (int i = 0; i < listsSize; i++) {

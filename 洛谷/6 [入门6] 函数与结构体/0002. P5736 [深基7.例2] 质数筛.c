@@ -2,7 +2,7 @@
 #include <stdbool.h>
 #include <stdlib.h>
 
-bool Prime(int a) {
+bool prime(int a) {
     if (a < 2) {
         return 0;
     }
@@ -27,7 +27,7 @@ int main() {
     }
 
     for (int i = 0; i < n; i++) {
-        if (Prime(arr[i])) {
+        if (prime(arr[i])) {
             printf("%d ", arr[i]);
         }
     }

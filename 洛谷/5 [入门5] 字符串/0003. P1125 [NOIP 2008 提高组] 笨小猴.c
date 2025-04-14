@@ -3,7 +3,7 @@
 #include <string.h>
 #include <limits.h>
 
-bool Prime(int a) {
+bool prime(int a) {
     if (a < 2) {
         return 0;
     }
@@ -38,7 +38,7 @@ int main() {
     }
 
     int ans = maxn - minn;
-    if (Prime(ans)) {
+    if (prime(ans)) {
         printf("Lucky Word\n");
         printf("%d\n", ans);
     }

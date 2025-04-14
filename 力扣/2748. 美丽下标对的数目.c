@@ -5,7 +5,6 @@
  */
 
 // @lc code=start
-
 int Gcd(int a, int b) {
     if (b > a) {
         int temp = a;
