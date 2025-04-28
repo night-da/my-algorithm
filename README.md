@@ -1,6 +1,6 @@
 # my-algorithm
 
-本人的一些算法题题解、笔记
+我的一些算法题题解、笔记
 
 **编译环境：** Visual Studio Code + MinGW
 
